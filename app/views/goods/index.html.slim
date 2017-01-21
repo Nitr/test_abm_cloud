@@ -1,0 +1,31 @@
+= form_tag goods_import_path, multipart: true do
+  = file_field_tag :file
+  = submit_tag 'Import'
+
+table.table
+  tr
+    th Id
+    th Sku
+    th SupplierCode
+    th field1
+    th field2
+    th field3
+    th field4
+    th field5
+    th field6
+    th price
+
+  - @goods.each do |good|
+    tr
+      td = good.id
+      td = good.sku
+      td = good.supplier_code
+      td = good.field1
+      td = good.field2
+      td = good.field3
+      td = good.field4
+      td = good.field5
+      td = good.field6
+      td = good.price
+
+= paginate @goods
